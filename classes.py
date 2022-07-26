@@ -139,7 +139,7 @@ class Alunos:
     def __str__(self):
         """Imprime os atributos id, nome e classe do objeto"""
         return "id: %s\nnome: %s\nclasse: %s." %(self.id, self.nome, self.classe)
-"""
+
 Tiago = Alunos('00001', 'Tiago T. R. Gonçalves', '2022-A')
 
 print(type(Tiago))
@@ -147,7 +147,7 @@ print("=============")
 print(type(Alunos))
 print("=============")
 print(Tiago.__dict__)
-"""
+
 
 
 
@@ -171,10 +171,10 @@ class Triangulo:
             return True
         else:
             return False
-"""
+
 tri = Triangulo(90,45,45)
 print(tri)
-"""
+
 
 
 
@@ -193,10 +193,10 @@ class Musica:
     
 letra1 = ["E na cama quando inflama\nPor outro nome me chama\nMas tem fácil explicação\nO meu nome é Djair\nFacinho de confundir\nCom João do Caminhão.",
             "Veja só como é que é\nA ingratidão de uma mulher\nEla é o meu tesouro\nNós fomos feitos um para o outro\nEla é uma vaca e eu sou o touro."]
-"""
+
 BDC_MAss = Musica("Bois Don`t Cry", "Mamonas Assassinas", letra1)
 BDC_MAss.canta_pra_mim()
-"""
+
 
 
 
