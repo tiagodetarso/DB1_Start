@@ -197,3 +197,43 @@ letra1 = ["E na cama quando inflama\nPor outro nome me chama\nMas tem fácil exp
 BDC_MAss = Musica("Bois Don`t Cry", "Mamonas Assassinas", letra1)
 BDC_MAss.canta_pra_mim()
 """
+
+
+
+# EXERCÍCIO 08
+from datetime import datetime
+
+class JatoMilitar1Lugar:
+    """Classe que representa Jatos Militares de um lugar"""
+    def __init__(self, modelo, base_orig):
+        self.modelo = modelo
+        self.base = base_orig
+        self._historico = [self.base]
+        self._designa = False
+    
+    def designar_piloto(self, piloto):
+        self.piloto = piloto
+        self._designa = True
+    
+    def rebasear_aeronave(self, base_nova):
+        if self._designa:
+            self.base = base_nova
+            self._data = datetime.now().strftime('%d-%m-%Y')
+            self._hora = datetime.now().strftime('%H:%M')
+            self._historico.append([self.base, self._data, self._hora])
+            self._designa = False
+        
+        else:
+            return print("Não foi possível rebasear a aeronave pois não há piloto designado.")
+    
+    def __str__(self):
+        return """ 
+                Jato: %s
+                Base de Origem: %s
+                Histórico de Transferências: %s
+                """ % (self.modelo, self._historico[0], self._historico[1::])
+
+jato1 = JatoMilitar1Lugar('TT16', 'Curitiba')
+jato1.designar_piloto('Francisco José')
+jato1.rebasear_aeronave('São Paulo')
+print(jato1)
